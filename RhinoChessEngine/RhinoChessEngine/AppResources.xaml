@@ -1,0 +1,7 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RhinoChessEngine">
+    <SolidColorBrush x:Key="LightSquareColour" Color="#f0d9b5" />
+    <SolidColorBrush x:Key="DarkSquareColour" Color="#B58863" />
+</ResourceDictionary>
