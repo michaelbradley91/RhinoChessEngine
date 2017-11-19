@@ -107,6 +107,18 @@
     <None Include="RhinoChessEngine_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ChessPieces\BlackBishop.svg" />
+    <Content Include="Assets\ChessPieces\BlackKing.svg" />
+    <Content Include="Assets\ChessPieces\BlackKnight.svg" />
+    <Content Include="Assets\ChessPieces\BlackPawn.svg" />
+    <Content Include="Assets\ChessPieces\BlackQueen.svg" />
+    <Content Include="Assets\ChessPieces\BlackRook.svg" />
+    <Content Include="Assets\ChessPieces\WhiteBishop.svg" />
+    <Content Include="Assets\ChessPieces\WhiteKing.svg" />
+    <Content Include="Assets\ChessPieces\WhiteKnight.svg" />
+    <Content Include="Assets\ChessPieces\WhitePawn.svg" />
+    <Content Include="Assets\ChessPieces\WhiteQueen.svg" />
+    <Content Include="Assets\ChessPieces\WhiteRook.svg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

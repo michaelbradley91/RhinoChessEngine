@@ -14,7 +14,7 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Name="AppPanel" LayoutUpdated="AppPanel_LayoutUpdated">
+    <Grid Background="{StaticResource DarkBackground}" Name="AppPanel" LayoutUpdated="AppPanel_LayoutUpdated">
         <Grid Name="ChessBoard">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -36,7 +36,9 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8"></Rectangle>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8">
+                <Image Stretch="UniformToFill" Source="{StaticResource BlackBishop}" Width="45" Height="45"/>
+            </Border>
             <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="1" Name="B8"></Rectangle>
             <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="2" Name="C8"></Rectangle>
             <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="3" Name="D8"></Rectangle>
