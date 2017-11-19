@@ -18,8 +18,8 @@ namespace RhinoChessEngine
 
         private void AppPanel_LayoutUpdated(object sender, object e)
         {
-//            ChessBoard.Width = Math.Min(AppPanel.ActualWidth, AppPanel.ActualHeight);
-//            ChessBoard.Height = Math.Min(AppPanel.ActualWidth, AppPanel.ActualHeight);
+            ChessBoard.Width = Math.Min(AppPanel.ActualWidth, AppPanel.ActualHeight);
+            ChessBoard.Height = Math.Min(AppPanel.ActualWidth, AppPanel.ActualHeight);
         }
 
         private void A8_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)

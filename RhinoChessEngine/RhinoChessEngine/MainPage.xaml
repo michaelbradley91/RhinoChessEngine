@@ -5,7 +5,6 @@
     xmlns:local="using:RhinoChessEngine"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:chessPieces="using:RhinoChessEngine.ChessPieces"
     mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
@@ -17,6 +16,20 @@
 
     <Grid Background="{StaticResource DarkBackground}" Name="AppPanel" LayoutUpdated="AppPanel_LayoutUpdated">
         <Grid Name="ChessBoard">
+            <Grid.Resources>
+                <Style x:Key="LetterStyling" TargetType="TextBlock">
+                    <Setter Property="Margin" Value="1 60 60 0" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontFamily" Value="{StaticResource SmallFont}" />
+                </Style>
+                <Style x:Key="NumberStyling" TargetType="TextBlock">
+                    <Setter Property="Margin" Value="60 1 0 60" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontFamily" Value="{StaticResource SmallFont}" />
+                </Style>
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -37,72 +50,308 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8" HorizontalAlignment="Stretch">
-                <chessPieces:BlackBishop HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></chessPieces:BlackBishop>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8">
+                <ContentControl Template="{StaticResource BlackRook}"/>
             </Border>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="1" Name="B8"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="2" Name="C8"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="3" Name="D8"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="4" Name="E8"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="5" Name="F8"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="6" Name="G8"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="7" Name="H8"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="0" Name="A7"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="1" Name="B7"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="2" Name="C7"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="3" Name="D7"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="4" Name="E7"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="5" Name="F7"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="6" Name="G7"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="7" Name="H7"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="0" Name="A6"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="1" Name="B6"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="2" Name="C6"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="3" Name="D6"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="4" Name="E6"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="5" Name="F6"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="6" Name="G6"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="7" Name="H6"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="0" Name="A5"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="1" Name="B5"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="2" Name="C5"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="3" Name="D5"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="4" Name="E5"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="5" Name="F5"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="6" Name="G5"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="7" Name="H5"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="0" Name="A4"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="1" Name="B4"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="2" Name="C4"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="3" Name="D4"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="4" Name="E4"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="5" Name="F4"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="6" Name="G4"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="7" Name="H4"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="0" Name="A3"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="1" Name="B3"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="2" Name="C3"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="3" Name="D3"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="4" Name="E3"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="5" Name="F3"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="6" Name="G3"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="7" Name="H3"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="0" Name="A2"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="1" Name="B2"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="2" Name="C2"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="3" Name="D2"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="4" Name="E2"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="5" Name="F2"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="6" Name="G2"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="7" Name="H2"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="0" Name="A1"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="1" Name="B1"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="2" Name="C1"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="3" Name="D1"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="4" Name="E1"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="5" Name="F1"></Rectangle>
-            <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="6" Name="G1"></Rectangle>
-            <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="7" Name="H1"></Rectangle>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="1" Name="B8">
+                <ContentControl Template="{StaticResource BlackKnight}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="2" Name="C8">
+                <ContentControl Template="{StaticResource BlackBishop}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="3" Name="D8">
+                <ContentControl Template="{StaticResource BlackQueen}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="4" Name="E8">
+                <ContentControl Template="{StaticResource BlackKing}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="5" Name="F8">
+                <ContentControl Template="{StaticResource BlackBishop}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="6" Name="G8">
+                <ContentControl Template="{StaticResource BlackKnight}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="7" Name="H8">
+                <Grid>
+                    <ContentControl Template="{StaticResource BlackRook}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="8" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="0" Name="A7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="1" Name="B7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="2" Name="C7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="3" Name="D7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="4" Name="E7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="5" Name="F7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="1" Grid.Column="6" Name="G7">
+                <ContentControl Template="{StaticResource BlackPawn}"/>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="1" Grid.Column="7" Name="H7">
+                <Grid>
+                    <ContentControl Template="{StaticResource BlackPawn}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="7" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="0" Name="A6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="1" Name="B6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="2" Name="C6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="3" Name="D6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="4" Name="E6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="5" Name="F6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="2" Grid.Column="6" Name="G6">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="2" Grid.Column="7" Name="H6">
+                <Grid>
+                    <ContentControl />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="6" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="0" Name="A5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="1" Name="B5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="2" Name="C5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="3" Name="D5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="4" Name="E5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="5" Name="F5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="3" Grid.Column="6" Name="G5">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="3" Grid.Column="7" Name="H5">
+                <Grid>
+                    <ContentControl />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="5" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="0" Name="A4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="1" Name="B4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="2" Name="C4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="3" Name="D4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="4" Name="E4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="5" Name="F4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="4" Grid.Column="6" Name="G4">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="4" Grid.Column="7" Name="H4">
+                <Grid>
+                    <ContentControl />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="4" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="0" Name="A3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="1" Name="B3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="2" Name="C3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="3" Name="D3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="4" Name="E3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="5" Name="F3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="5" Grid.Column="6" Name="G3">
+                <ContentControl />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="5" Grid.Column="7" Name="H3">
+                <Grid>
+                    <ContentControl />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="3" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="0" Name="A2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="1" Name="B2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="2" Name="C2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="3" Name="D2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="4" Name="E2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="5" Name="F2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="6" Grid.Column="6" Name="G2">
+                <ContentControl Template="{StaticResource WhitePawn}" />
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="6" Grid.Column="7" Name="H2">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhitePawn}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="2" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="0" Name="A1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteRook}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="a" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="1" Name="B1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteKnight}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="b" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="2" Name="C1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteBishop}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="c" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="3" Name="D1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteQueen}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="d" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="4" Name="E1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteKing}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="e" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="5" Name="F1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteBishop}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="f" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource DarkSquareColour}" Grid.Row="7" Grid.Column="6" Name="G1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteKnight}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="g" Foreground="{StaticResource LightSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="7" Grid.Column="7" Name="H1">
+                <Grid>
+                    <ContentControl Template="{StaticResource WhiteRook}" />
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource LetterStyling}" Text="h" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                    <ContentControl>
+                        <Viewbox Stretch="Fill">
+                            <TextBlock Style="{StaticResource NumberStyling}" Text="1" Foreground="{StaticResource DarkSquareColour}"></TextBlock>
+                        </Viewbox>
+                    </ContentControl>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>

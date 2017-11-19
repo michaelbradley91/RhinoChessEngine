@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RhinoChessEngine.Resources">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackBishop.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackKing.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackKnight.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackPawn.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackQueen.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/BlackRook.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhiteBishop.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhiteKing.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhiteKnight.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhitePawn.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhiteQueen.xaml" />
+        <ResourceDictionary Source="../Assets/ChessPieces/WhiteRook.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
