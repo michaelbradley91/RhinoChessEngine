@@ -5,6 +5,7 @@
     xmlns:local="using:RhinoChessEngine"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:chessPieces="using:RhinoChessEngine.ChessPieces"
     mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
@@ -36,8 +37,8 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8">
-                <Image Stretch="UniformToFill" Source="{StaticResource BlackBishop}" Width="45" Height="45"/>
+            <Border Background="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="0" Name="A8" HorizontalAlignment="Stretch">
+                <chessPieces:BlackBishop HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></chessPieces:BlackBishop>
             </Border>
             <Rectangle Fill="{StaticResource DarkSquareColour}" Grid.Row="0" Grid.Column="1" Name="B8"></Rectangle>
             <Rectangle Fill="{StaticResource LightSquareColour}" Grid.Row="0" Grid.Column="2" Name="C8"></Rectangle>
@@ -105,3 +106,34 @@
         </Grid>
     </Grid>
 </Page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

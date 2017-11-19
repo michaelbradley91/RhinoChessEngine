@@ -5,5 +5,4 @@
     <SolidColorBrush x:Key="LightSquareColour" Color="#f0d9b5" />
     <SolidColorBrush x:Key="DarkSquareColour" Color="#B58863" />
     <SolidColorBrush x:Key="DarkBackground" Color="#1a1a1a"></SolidColorBrush>
-    <SvgImageSource x:Key="BlackBishop" UriSource="Assets/ChessPieces/BlackBishop.svg"></SvgImageSource>
 </ResourceDictionary>
